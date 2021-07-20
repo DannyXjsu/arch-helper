@@ -1,6 +1,4 @@
 #!/bin/bash
-S_NAME=$0
-
 clear
 
 if [ "$1" != "-s" ]; then
@@ -33,7 +31,7 @@ cfdisk $dev
 cfdisk_exit=$?
 
 if [ "$cfdisk_exit" -ne 0 ]; then
-	echo "$S_NAME: Failed running cfdisk $dev, make sure you've typed everything right"
+	echo "$0: Failed running cfdisk $dev, make sure you've typed everything right"
 	sleep 3
 	exit
 fi	
