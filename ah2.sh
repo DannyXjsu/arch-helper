@@ -1,10 +1,15 @@
 #!/bin/bash
 #i know this script looks ugly lmao
 
-echo "This script will now pacstrap /mnt with base base-devel linux linux-firmware, it will also install git, vim and ranger, after pacstrap is done it will chroot into mnt and install grub, network manager and it will set up a user too"
-echo ""
-read -n 1 -s -r -p "Press any key to continue"
-
+if [ "$1" != "-s" ]; then
+  echo "This script will now pacstrap /mnt with base base-devel linux linux-firmware, it will also install git, vim and ranger, after pacstrap is done it will chroot into mnt and install grub, network manager and it will set up a user too"
+  echo ""
+  read -n 1 -s -r -p "Press any key to continue"
+else
+  echo "$0: Speed mode is activated"
+  sleep 1
+ fi
+ 
 pacstrap /mnt base base-devel linux linux-firmware vim git ranger
 echo ""
 echo ""
@@ -13,12 +18,16 @@ arch-chroot /mnt
 echo ""
 echo "$0 INSTALLING GRUB AND NETWORKMANAGER"
 pacman -S grub networkmanager
-echo ""
-echo ""
-lsblk
-echo ""
-read -p "What device do you want grub to be installed? (DON'T USE THE PARTITION!): " dev
-grub-install /dev/$dev
+if [ "$2" != "-f" ]; then
+  echo ""
+  echo ""
+  lsblk
+  echo ""
+  read -p "What device do you want grub to be installed? (DON'T USE THE PARTITION!): " dev
+  grub-install /dev/$dev
+else
+  grub-install /dev/sda
+fi
 grub-mkconfig >> /boot/grub/grub.cfg
 echo ""
 echo "$0: ENABLING NETWORK MANAGER IN SYSTEMD"
