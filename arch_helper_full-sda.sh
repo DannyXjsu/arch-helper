@@ -24,4 +24,4 @@ mount /mnt /dev/sda1
 
 echo "This script will now run ah2.sh in 3 seconds"
 sleep 3
-bash ah2.sh -s
+bash ah2.sh -s -f
