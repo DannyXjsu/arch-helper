@@ -13,8 +13,10 @@ else
 pacstrap /mnt base base-devel linux linux-firmware vim git ranger
 echo ""
 echo ""
+echo "GENERATING FSTAB"
+genfstab /mnt > /mnt/etc/fstab
 echo "$0: CHROOTING"
-arch-chroot /mnt
+arch-chroot /mnt bash -c '
 echo ""
 echo "$0 INSTALLING GRUB AND NETWORKMANAGER"
 pacman -S grub networkmanager
@@ -28,7 +30,7 @@ if [ "$2" != "-f" ]; then
 else
   grub-install /dev/sda
 fi
-grub-mkconfig >> /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
 echo ""
 echo "$0: ENABLING NETWORK MANAGER IN SYSTEMD"
 systemctl enable NetworkManager.service
@@ -55,5 +57,5 @@ echo ".."
 sleep 1
 echo "..."
 sleep 1
-exit
+'
 echo "$0: System will reboot in 5 seconds, press CTRL + C to cancel (will exit script)"
