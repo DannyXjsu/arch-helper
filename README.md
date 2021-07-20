@@ -1,7 +1,7 @@
 # arch-helper
 this is just a script that helps me install arch linux a bit faster, it's not fancy or good but does the job
 
-run the arch_helpher.sh first then the ah2.sh, alternatively you could run arch_helper_full-sda.sh script to automate everything, but it will only use sda as the install device with only one partition, do not use this if you have precious data in your sda device
+run ``arch_helpher.sh`` first then ``ah2.sh``, alternatively you could run ``arch_helper_full-sda.sh`` script to automate everything, but it will only use sda as the install device with only one partition, do not use this if you have precious data in your sda device
 
 run this after booting iso:
 
