@@ -6,5 +6,3 @@ run the arch_helpher.sh first then the ah2.sh
 run this after booting iso:
 
 ``curl -L https://github.com/DannyXjsu/arch-helper/archive/main.tar.gz``
-
-and then use gunzip
