@@ -4,7 +4,7 @@ clear
 if [ "$1" != "-s" ]; then
 	echo "Welcome to Arch Helper made by Dannyxjsu"
 	echo "This script makes it easier and faster to install  Arch Linux"
-	echo "'Why?' you might ask, well i'm tired of having to manually install Arch over and over again, I just waant to install it a little bit faster whenver I need to install it again"
+	echo "'Why?' you might ask, well i'm tired of having to manually install Arch over and over again, I just waant to install it a little bit faster whenever I need to install it again"
 	echo ""
 	read -n 1 -s -r -p "Press any key to continue"
 	clear
