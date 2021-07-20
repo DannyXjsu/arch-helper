@@ -20,7 +20,7 @@ clear
 mkfs.ext4 /dev/sda
 
 umount -R /mnt
-mount /mnt /dev/sda1
+mount /dev/sda1 /mnt
 
 echo "This script will now run ah2.sh in 3 seconds"
 sleep 3
