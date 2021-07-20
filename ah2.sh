@@ -14,7 +14,7 @@ pacstrap /mnt base base-devel linux linux-firmware vim git ranger
 echo ""
 echo ""
 echo "GENERATING FSTAB"
-genfstab /mnt > /mnt/etc/fstab
+genfstab -U /mnt > /mnt/etc/fstab
 echo "$0: CHROOTING"
 arch-chroot /mnt bash -c '
 echo ""
@@ -59,3 +59,4 @@ echo "..."
 sleep 1
 '
 echo "$0: System will reboot in 5 seconds, press CTRL + C to cancel (will exit script)"
+reboot
