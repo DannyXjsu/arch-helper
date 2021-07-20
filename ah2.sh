@@ -1,4 +1,5 @@
 #!/bin/bash
+#i know this script looks ugly lmao
 
 echo "This script will now pacstrap /mnt with base base-devel linux linux-firmware, it will also install git, vim and ranger, after pacstrap is done it will chroot into mnt and install grub, network manager and it will set up a user too"
 echo ""
