@@ -17,7 +17,7 @@ echo "Opening cfdisk /dev/sda"
 cfdisk /dev/sda
 clear
 
-mkfs.ext4 /dev/sda
+mkfs.ext4 /dev/sda1
 
 umount -R /mnt
 mount /dev/sda1 /mnt
