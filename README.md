@@ -8,3 +8,5 @@ run this after booting iso:
 ``curl -L https://github.com/DannyXjsu/arch-helper/archive/main.tar.gz``
 
 if curl gets fucky with that command just add `--output [filename].tar.gz` at the end
+
+run tar and then enter the folder and run the arch_helper.sh with bash
