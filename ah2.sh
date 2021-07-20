@@ -25,7 +25,7 @@ if [ "$2" != "-f" ]; then
   echo ""
   lsblk
   echo ""
-  read -p "What device do you want grub to be installed? (DON'T USE THE PARTITION!): " dev
+  read -p "What device do you want grub to be installed? " dev
   grub-install /dev/$dev
 else
   grub-install /dev/sda
